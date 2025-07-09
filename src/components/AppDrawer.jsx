@@ -72,7 +72,7 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
                     <div className='bg-zinc-100 p-2 rounded-lg pt-3'>
                         <div className='flex gap-2 items-center justify-between'>
                             <div className='flex gap-2 items-center'>
-                        <img src="" alt="" className='h-5 w-5 rounded-full' />
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/002/442/856/small_2x/f-letter-logo-template-initials-sign-free-vector.jpg" alt="" className='h-5 w-5 rounded-full object-cover' />
                         <div className='text-sm'>
                             <p >Homepage.fig</p>
                             <p>13.4 Mb</p>
