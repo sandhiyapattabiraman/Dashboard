@@ -52,7 +52,7 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen, IsToggle}){
                         <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}> 10:15 am</p>
                         </div>
                     
-                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Commented on Stark Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Commented on <span className='text-sm text-blue-500'>Stark Projects</span></p>
                     <div className='bg-zinc-100 p-2 rounded-lg pt-3 text-sm'>
                         <p className='text-black'>Hii! next week we'll start a new project. I'll tell you all details later</p>
                     </div>
@@ -68,7 +68,7 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen, IsToggle}){
                         <h2 className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Guy Hawkins</h2>
                         <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>10:15 am</p>
                     </div>
-                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to 7Heros Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to <span className='text-sm text-blue-500'>7Heros Projects</span> </p>
                     <div className='bg-zinc-100 p-2 rounded-lg pt-3'>
                         <div className='flex gap-2 items-center justify-between'>
                             <div className='flex gap-2 items-center'>
@@ -94,7 +94,7 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen, IsToggle}){
                         <h2 className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Kristin Watson</h2>
                         <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>10:15 am</p>
                     </div>
-                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to 7Heros Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to<span className='text-sm text-blue-500'>7Heros Projects</span></p>
                     </div>
                 </div>
             </div>

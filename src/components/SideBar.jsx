@@ -77,9 +77,9 @@ function SideBar({ isOpen, setIsOpen, IsToggle, setIsToggle }) {
                 </div>
                 {isOpen ? (
                     <div >
-                        <div className=' p-6 rounded-3xl flex flex-col gap-4 bg-gradient-to-b from-blue-100 to-white justify-center items-center ' >
-                            <h2 className='font-bold text-lg'>Upgrade to pro</h2>
-                            <p className='font-semibold text-center text-zinc-700'>Get 1-month free and unlock</p>
+                        <div className={`' p-6 rounded-3xl flex flex-col gap-4 bg-gradient-to-b ${IsToggle ? 'from-zinc-700 to-black' : 'from-blue-100 to-white'}  justify-center items-center '`} >
+                            <h2 className={`font-bold text-lg ${IsToggle ? 'text-white' : 'text-black'}`}>Upgrade to pro</h2>
+                            <p className={`font-semibold text-center ${IsToggle ? 'text-zinc-400' : 'text-zinc-700'} `}>Get 1-month free and unlock</p>
                             <button className='bg-blue-200 py-2 px-6 rounded-4xl cursor-pointer font-semibold'>Upgrade</button>
                         </div>
                     </div>
