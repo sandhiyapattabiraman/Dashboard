@@ -1,6 +1,6 @@
 import { CalendarDays, ThumbsUp, Activity, Ellipsis } from 'lucide-react';
 import { FaCaretDown, FaCaretUp, FaChevronDown, FaClock, FaSearch } from 'react-icons/fa'
-import { PiChartLineUpBold, PiTerminalWindowBold} from "react-icons/pi";
+import { PiChartLineUpBold, PiTerminalWindowBold } from "react-icons/pi";
 import '../App.css'
 import {
     LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer
@@ -10,7 +10,7 @@ import { MdOutlineTimer } from 'react-icons/md';
 
 
 
-function Content({ isOpen, drawerIsOpen }) {
+function Content({ isOpen, drawerIsOpen, IsToggle }) {
 
     const data = [
         { name: '01', Thismonth: 6, Lastmonth: 4 },
@@ -24,17 +24,17 @@ function Content({ isOpen, drawerIsOpen }) {
 
     return (
         <>
-            <div className={`${isOpen ? 'w-[82%] ml-[22%]' : 'w-[94%] ml-[10%]'} ${drawerIsOpen ? 'mr-[23%]' : ''} mx-18 my-10 transition-all duration-300`}>
+            <div className={`${isOpen ? 'w-[82%] ml-[22%]' : 'w-[94%] ml-[10%]'} ${drawerIsOpen ? 'mr-[23%]' : ''}  mx-18 my-10 transition-all duration-300`}>
 
                 <div className=" w-full border-b pb-5 border-gray-400 flex justify-between items-center">
 
                     <div className='flex flex-col gap-2'>
-                        <h1 className='text-4xl font-bold text-black'>Hello, Margaret</h1>
-                        <p className='text-lg text-gray-700 '>Track team progress here. You almost reach a goal!</p>
+                        <h1 className={`text-4xl font-bold ${IsToggle ? 'text-white ' : 'text-black'}`}>Hello, Margaret</h1>
+                        <p className={`text-lg  ${IsToggle ? 'text-gray-200 ' : 'text-gray-700'}`}>Track team progress here. You almost reach a goal!</p>
                     </div>
 
                     <div className='flex gap-4 justify-center items-center'>
-                        <p>16 May, 2023</p>
+                        <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>16 May, 2023</p>
                         <div className='bg-zinc-100 rounded-full flex justify-center items-center h-10 w-10'>
                             <CalendarDays />
                         </div>
@@ -48,9 +48,9 @@ function Content({ isOpen, drawerIsOpen }) {
                             <ThumbsUp />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <p className='font-semibold'>Finished</p>
+                            <p className={`font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>Finished</p>
                             <div className='flex gap-2 items-end justify-center'>
-                                <p className='text-xl font-semibold'>18</p>
+                                <p className={`text-xl font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>18</p>
                                 <p className='flex text-sm text-blue-400 pb-0.5'> <FaCaretDown className='mt-1 ' /> +8 tasks</p>
                             </div>
                         </div>
@@ -61,9 +61,9 @@ function Content({ isOpen, drawerIsOpen }) {
                             <MdOutlineTimer className='size-7' />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <p className='font-semibold'>Tracked</p>
+                            <p className={`font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>Tracked</p>
                             <div className='flex gap-2 items-end'>
-                                <p className='text-xl font-semibold'>31h</p>
+                                <p className={`text-xl font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>31h</p>
                                 <p className='flex text-sm text-red-400 pb-0.5'> <FaCaretUp className='mt-1 ' /> -6 hours</p>
                             </div>
                         </div>
@@ -75,9 +75,9 @@ function Content({ isOpen, drawerIsOpen }) {
                             <PiChartLineUpBold className='size-6' />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <p className='font-semibold'>Efficiency</p>
+                            <p className={`font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>Efficiency</p>
                             <div className='flex gap-2 items-end'>
-                                <p className='text-xl font-semibold'>93%</p>
+                                <p className={`text-xl font-semibold ${IsToggle ? 'text-white ' : 'text-black'}`}>93%</p>
                                 <p className='flex text-sm text-blue-400 pb-0.5'> <FaCaretDown className='mt-1 ' /> +12%</p>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ function Content({ isOpen, drawerIsOpen }) {
                 <div className='mt-10'>
                     <div className='flex justify-between'>
 
-                        <h2 className='font-bold text-3xl tracking-tight'>
+                        <h2 className={`font-bold text-3xl tracking-tight ${IsToggle ? 'text-white ' : 'text-black'}`}>
                             Performance
                         </h2>
 
@@ -113,12 +113,12 @@ function Content({ isOpen, drawerIsOpen }) {
 
                 <div className='flex justify-between items-center mt-10'>
                     <div className='flex items-center gap-10'>
-                        <h2 className='font-bold text-3xl tracking-tight'>Current Tasks</h2>
+                        <h2 className={`font-bold text-3xl tracking-tight ${IsToggle ? 'text-white ' : 'text-black'}`}>Current Tasks</h2>
                         <div className='h-5 w-0.5 bg-zinc-400' />
-                        <p className='text-xl font-medium'>Done 30%</p>
+                        <p className={`text-xl font-medium ${IsToggle ? 'text-white ' : 'text-black'}`}>Done 30%</p>
                     </div>
                     <div className='flex items-center justify-center gap-2 border-1 cursor-pointer border-gray-400 px-4 py-1 rounded-3xl'>
-                        <p className='text-lg font-normal '>Week</p> <FaChevronDown />
+                        <p className={`text-lg font-normal ${IsToggle ? 'text-white ' : 'text-black'}`}>Week</p> <FaChevronDown className={`${IsToggle ? 'text-white ' : 'text-black'}`} />
                     </div>
                 </div>
 
@@ -126,65 +126,65 @@ function Content({ isOpen, drawerIsOpen }) {
 
                     <div className='flex gap-2 items-center justify-between'>
                         <div className='flex gap-2 items-center   w-[85%]'>
-                        <div className='bg-zinc-200 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
-                            <Activity />
-                        </div>
-                        <p className='font-medium text-lg'>Product Review for UI8 Market</p>
+                            <div className='bg-zinc-200 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
+                                <Activity />
+                            </div>
+                            <p className={`font-medium text-lg ${IsToggle ? 'text-white ' : 'text-black'}`}>Product Review for UI8 Market</p>
                         </div>
                         <div className='flex gap-2 items-center w-[40%]'>
-                            <div className='h-2 w-2 bg-orange-400 rounded-full'/>
-                            <p>In progress</p>
+                            <div className='h-2 w-2 bg-orange-400 rounded-full' />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>In progress</p>
                         </div>
 
                         <div className='flex gap-2 items-center  w-[40%]'>
-                            <FaClock/>
-                            <p>4h</p>
+                            <FaClock />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>4h</p>
                         </div>
                         <div>
-                            <Ellipsis/>
+                            <Ellipsis className={`${IsToggle ? 'text-white ' : 'text-black'}`}/>
                         </div>
-                        
+
                     </div>
 
                     <div className='flex gap-2 items-center '>
                         <div className='flex gap-2 items-center  w-[85%]'>
-                        <div className='bg-red-100 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
-                            <FaSearch className='size-4.5'/>
-                        </div>
-                        <p className='font-medium text-lg'>UX Research for Products</p>
+                            <div className='bg-red-100 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
+                                <FaSearch className='size-4.5' />
+                            </div>
+                            <p className={`font-medium text-lg ${IsToggle ? 'text-white ' : 'text-black'}`}>UX Research for Products</p>
                         </div>
                         <div className='flex gap-2 items-center w-[40%] '>
-                            <div className='h-2 w-2 bg-indigo-500 rounded-full'/>
-                            <p>On hold</p>
+                            <div className='h-2 w-2 bg-indigo-500 rounded-full' />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>On hold</p>
                         </div>
 
                         <div className='flex gap-2 items-center w-[40%] '>
-                            <FaClock/>
-                            <p>8h</p>
+                            <FaClock />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>8h</p>
                         </div>
                         <div>
-                            <Ellipsis/>
+                            <Ellipsis className={`${IsToggle ? 'text-white ' : 'text-black'}`}/>
                         </div>
                     </div>
 
                     <div className='flex gap-2 items-center justify-between'>
                         <div className='flex gap-2 items-center  w-[85%]'>
-                        <div className='bg-zinc-100 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
-                            <PiTerminalWindowBold />
-                        </div>
-                        <p className='font-medium text-lg'>App design and development</p>
+                            <div className='bg-zinc-100 flex justify-center items-center p-2 h-10 w-10 rounded-full'>
+                                <PiTerminalWindowBold />
+                            </div>
+                            <p className={`font-medium text-lg ${IsToggle ? 'text-white ' : 'text-black'}`}>App design and development</p>
                         </div>
                         <div className='flex gap-2 items-center w-[40%]'>
-                            <div className='h-2 w-2 bg-sky-400 rounded-full'/>
-                            <p>Done</p>
+                            <div className='h-2 w-2 bg-sky-400 rounded-full' />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Done</p>
                         </div>
 
                         <div className='flex gap-2 items-center w-[40%]'>
-                            <FaClock/>
-                            <p>32h</p>
+                            <FaClock />
+                            <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>32h</p>
                         </div>
                         <div>
-                            <Ellipsis/>
+                            <Ellipsis className={`${IsToggle ? 'text-white ' : 'text-black'}`}/>
                         </div>
                     </div>
                 </div>

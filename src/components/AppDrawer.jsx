@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 import { MdDownloadForOffline } from 'react-icons/md';
 
 
-function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
+function AppDrawer({drawerIsOpen, setDrawerIsOpen, IsToggle}){
 
 
     return(
         <>
-        <div className={`fixed h-10 w-10 p-2 ml-[96%] mt-5 z-20  rounded-full cursor-pointer ${drawerIsOpen ? 'bg-white' : 'bg-zinc-100'}`} onClick={() => setDrawerIsOpen(prev => !prev)}>
+        <div className={`fixed h-10 w-10 p-2 ml-[96%] mt-3 z-20   rounded-full cursor-pointer ${drawerIsOpen ? 'bg-white' : 'bg-zinc-100'}`} onClick={() => setDrawerIsOpen(prev => !prev)}>
             <MessageCircle/>
         </div>
         {drawerIsOpen && (
-        <motion.div className='bg-white fixed ml-[80%] w-[20%] flex flex-col p-4 h-screen rounded-l-lg shadow-lg/40 gap-6  z-10 transition-all duration-300'>
+        <motion.div className={`fixed ml-[80%] w-[20%] flex flex-col p-4 h-screen  gap-6  z-10 ${IsToggle ?  'border-l-1 border-gray-400' : 'rounded-l-lg shadow-lg/40' } transition-all duration-300`}>
             <div className='bg-zinc-100 rounded-lg p-6 gap-4 flex flex-col justify-center items-center '>
                     <img src="https://media.themoviedb.org/t/p/w500/A14lLCZYDhfYdBa0fFRpwMDiwRN.jpg" alt="" className=' h-20 w-20 rounded-full object-cover'/>
                     <div className='flex flex-col justify-center items-center gap-2'>
@@ -35,8 +35,8 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
             </div>
 
             <div className='flex justify-center items-center gap-3'>
-                <div className='h-0.5 w-full bg-zinc-100'/>
-                <p>Activity</p>
+                <div className='h-0.5 w-full bg-zinc-100 '/>
+                <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Activity</p>
                 <div className='h-0.5 w-full bg-zinc-100'/>
             </div>
 
@@ -48,13 +48,13 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
                     <div className='flex flex-col gap-1 '>
                     
                         <div className='flex justify-between w-full'>
-                        <h2>Floyd Miles</h2>
-                        <p>10:15 am</p>
+                        <h2 className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Floyd Miles</h2>
+                        <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}> 10:15 am</p>
                         </div>
                     
-                    <p className='text-xs'>Commented on Stark Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Commented on Stark Projects</p>
                     <div className='bg-zinc-100 p-2 rounded-lg pt-3 text-sm'>
-                        <p>Hii! next week we'll start a new project. I'll tell you all details later</p>
+                        <p className='text-black'>Hii! next week we'll start a new project. I'll tell you all details later</p>
                     </div>
                     </div>
                 </div>
@@ -65,17 +65,17 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
                     </div>
                     <div className='flex flex-col gap-1 w-full'>
                         <div className='flex justify-between w-full'>
-                        <h2>Guy Hawkins</h2>
-                        <p>10:15 am</p>
+                        <h2 className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Guy Hawkins</h2>
+                        <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>10:15 am</p>
                     </div>
-                    <p className='text-xs'>Added a file to 7Heros Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to 7Heros Projects</p>
                     <div className='bg-zinc-100 p-2 rounded-lg pt-3'>
                         <div className='flex gap-2 items-center justify-between'>
                             <div className='flex gap-2 items-center'>
                         <img src="https://static.vecteezy.com/system/resources/thumbnails/002/442/856/small_2x/f-letter-logo-template-initials-sign-free-vector.jpg" alt="" className='h-5 w-5 rounded-full object-cover' />
                         <div className='text-sm'>
-                            <p >Homepage.fig</p>
-                            <p>13.4 Mb</p>
+                            <p className='text-black'>Homepage.fig</p>
+                            <p className='text-black'>13.4 Mb</p>
                         </div>
                         </div>
                         <MdDownloadForOffline/>
@@ -91,10 +91,10 @@ function AppDrawer({drawerIsOpen, setDrawerIsOpen}){
                     </div>
                     <div className='flex flex-col gap-1 w-full'>
                         <div className='flex justify-between w-full'>
-                        <h2>Kristin Watson</h2>
-                        <p>10:15 am</p>
+                        <h2 className={`${IsToggle ? 'text-white ' : 'text-black'}`}>Kristin Watson</h2>
+                        <p className={`${IsToggle ? 'text-white ' : 'text-black'}`}>10:15 am</p>
                     </div>
-                    <p className='text-xs'>Added a file to 7Heros Projects</p>
+                    <p className={`text-xs ${IsToggle ? 'text-white ' : 'text-black'}`}>Added a file to 7Heros Projects</p>
                     </div>
                 </div>
             </div>

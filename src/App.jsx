@@ -7,13 +7,14 @@ import { useState } from 'react';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [IsToggle, setIsToggle] = useState(false);
   
   return (
     <>
-      <div className='flex'>
-          <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
-          <Content isOpen={isOpen} drawerIsOpen={drawerIsOpen}/>
-          <AppDrawer drawerIsOpen={drawerIsOpen} setDrawerIsOpen={setDrawerIsOpen}/>
+      <div className={`flex ${IsToggle? 'bg-black' : 'bg-white'}`}>
+          <SideBar isOpen={isOpen} setIsOpen={setIsOpen} IsToggle={IsToggle} setIsToggle={setIsToggle} />
+          <Content isOpen={isOpen} drawerIsOpen={drawerIsOpen} IsToggle={IsToggle}/>
+          <AppDrawer drawerIsOpen={drawerIsOpen} setDrawerIsOpen={setDrawerIsOpen} IsToggle={IsToggle}/>
       </div>
     </>
   )
