@@ -3,8 +3,8 @@ import { Home, Component, ListTodo, Settings, Handshake, CirclePlus, Info, Circl
 import { motion } from 'framer-motion';
 import { FaCrown } from 'react-icons/fa'
 import { CiDark, CiLight } from 'react-icons/ci';
-import { button } from 'framer-motion/client';
-
+import Logo from '../assets/logo.png'
+import LogipLogo from '../assets/logip_logo.png'
 
 
 function SideBar({ isOpen, setIsOpen, IsToggle, setIsToggle }) {
@@ -18,9 +18,9 @@ function SideBar({ isOpen, setIsOpen, IsToggle, setIsToggle }) {
 
                 <div className={`flex  justify-start items-center  ${isOpen ? 'pt-8' : 'pt-9'} `}>
                     {isOpen ? (
-                        <img src="./src/assets/logip_logo.png" alt="" className={`h-15 ${IsToggle ? 'invert' : ''} `} />
+                        <img src={LogipLogo} alt="" className={`h-15 ${IsToggle ? 'invert' : ''} `} />
                     ) : (
-                        <img src='./src/assets/logo.png' className={`  ${IsToggle ? 'invert' : ''}`} />
+                        <img src={Logo} className={`  ${IsToggle ? 'invert' : ''}`} />
                     )
                     }
                 </div>
